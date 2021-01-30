@@ -1,4 +1,4 @@
-class position:
+class Position:
     def __init__(self, col, row):
         self.row = row
         self.col = col
@@ -31,4 +31,4 @@ class position:
         return result
 
 
-assert(position(1, 2) == position(1, 2))
+assert(Position(1, 2) == Position(1, 2))
