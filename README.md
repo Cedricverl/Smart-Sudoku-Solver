@@ -22,5 +22,5 @@ For estimation purposes
 Algorithm | Time 3x3 (sec) | Time 4x4 (sec)
 --- | --- | ---
 Crook | 0.006 | 0.26
-Backtrack | 0.001 | +3 days
+Backtrack | 0.001 | +6 days
 
