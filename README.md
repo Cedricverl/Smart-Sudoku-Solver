@@ -31,5 +31,5 @@ Backtrack | 0.001 | +6 days
 - tkinter
 
 ## Todo
-[ ] Increase performance
-[ ] Sudoku input from GUI
+- [ ] Increase performance
+- [ ] Sudoku input from GUI
