@@ -1,23 +1,44 @@
 from position import Position
-
+from tkinter import *
 
 class Board:
-    def __init__(self, board):
+    def __init__(self, board, GUI=False):
         self.q = len(board)
         self.qs = int(self.q ** (1 / 2))
         self.board = board  # nested list
+        self.root = Tk() if GUI else None
+        self.GUI = GUI
 
+        # root.mainloop()
     def getSize(self):
         return len(self.board)
 
     def getValueAt(self, position):
         return self.board[position.row][position.col]
 
-    def setValueAt(self, position, value):
+    def setValueAt(self, position, value, forsure=True):
+
         self.board[position.row][position.col] = value
+        if not self.GUI:
+            return
+        else:
+            if forsure:
+                if self.board[position.row][position.col] == 0:
+                    Label(self.root, text=value, relief=RIDGE,borderwidth=4, height=2,bg='white', width=5).grid(row=position.row, column=position.col)
+                else:
+                    Label(self.root, text=value, relief=RIDGE,borderwidth=4, height=2,bg='green', fg='blue',width=5).grid(row=position.row, column=position.col)
+            else:
+                if self.board[position.row][position.col] == 0:
+                    Label(self.root, text=value, relief=RIDGE,borderwidth=4, height=2,bg='white', width=5).grid(row=position.row, column=position.col)
+                else:
+                    Label(self.root, text=value, relief=RIDGE,borderwidth=4, height=2,bg='blue', fg='white',width=5).grid(row=position.row, column=position.col)
+
+            self.root.update()
 
     def __repr__(self):
-        return ',\n'.join(str(row) for row in self.board)
+        color = lambda n: "\033[0;32m%s\033[0;38m" % n if n != 0 else "\033[0;31m%s\033[0;38m" % n
+        # return "\033[0;32mkakapipi\033[0;38m"
+        return ',\n'.join(', '.join([color(n)for n in row]) for row in self.board)
 
     def emptySpot(self):
         for row in range(self.q):

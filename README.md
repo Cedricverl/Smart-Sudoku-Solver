@@ -11,11 +11,14 @@ Use board templates from `board_templates.py` or create your own and
 change the board name in `sudoku.py`, then run and let the magic do its work.
 ```python
 import sudoku, board, board_templates
-board = Board(board_templates.board_normal_medium)
-sudoku = Sudoku(board)
+board = board.Board(board_templates.board_normal_medium)
+sudoku = sudoku.Sudoku(board)
 sudoku.solve()
 print(sudoku)
 ```
+To see the algorithm in action, use the gui by running `sudokuGUI.py`
+
+![Example](./example.jpeg)
 
 ## Performance
 For estimation purposes
@@ -23,4 +26,7 @@ Algorithm | Time 3x3 (sec) | Time 4x4 (sec)
 --- | --- | ---
 Crook | 0.006 | 0.26
 Backtrack | 0.001 | +6 days
+
+## Requirements
+- tkinter
 
