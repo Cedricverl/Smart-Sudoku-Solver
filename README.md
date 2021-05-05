@@ -24,8 +24,8 @@ To see the algorithm in action, use the gui by running `sudokuGUI.py`
 For estimation purposes
 Algorithm | Time 3x3 (sec) | Time 4x4 (sec)
 --- | --- | ---
-Crook | 0.006 | 0.26
-Backtrack | 0.001 | +6 days
+Crook | 0.001 | 0.26
+Backtrack | 0.006 | +6 days
 
 ## Requirements
 - tkinter
